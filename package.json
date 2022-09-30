@@ -1,0 +1,27 @@
+{
+  "name": "tovsolver-service",
+  "version": "1.0.0",
+  "description": "## References",
+  "main": "index.js",
+  "scripts": {
+    "sls:package": "sls package",
+    "sls:deploy": "sls deploy",
+    "sls:undeploy": "sls remove",
+    "sls:clean-deploy": "npm run sls:undeploy ; npm run sls:deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeutronStarPhysics/tovsolver-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeutronStarPhysics/tovsolver-service/issues"
+  },
+  "homepage": "https://github.com/NeutronStarPhysics/tovsolver-service#readme",
+  "devDependencies": {
+    "serverless-python-requirements": "^5.4.0",
+    "serverless-wsgi": "^3.0.1"
+  }
+}
