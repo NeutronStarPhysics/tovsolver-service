@@ -1,9 +1,5 @@
 name: Deploy main branch
 
-# on:
-#   push:
-#     branches:
-#       - main
 on:
   workflow_dispatch:
     inputs:
@@ -27,7 +23,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        python-version: ["3.8"]
+        python-version: ["3.6"]
 
     steps:
     - uses: actions/checkout@v3
