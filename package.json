@@ -4,6 +4,7 @@
   "description": "## References",
   "main": "index.js",
   "scripts": {
+    "test": "pytest",
     "sls:package": "sls package",
     "sls:deploy": "sls deploy",
     "sls:undeploy": "sls remove",
