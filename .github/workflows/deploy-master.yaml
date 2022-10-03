@@ -44,8 +44,7 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Show Environment
-      run: echo 'Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}''
-
+      run: echo 'Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}'
     - name: Serverless deploy
       uses: serverless/github-action@v1.53.0
       # uses: serverless/github-action@v3.1
