@@ -11,13 +11,14 @@ custom:
     app: src/app.app
     packRequirements: false
   pythonRequirements:
-    dockerizePip: non-linux
+    pythonBin: python3
+    dockerizePip: false
 
 provider:
   name: aws
   runtime: python3.8
-  stage: ${env:deploy_target}
-  region: eu-central-1
+  stage: ${env:DEPLOY_TARGET}
+  region: ${env:REGION}
 
 functions:
   app:
