@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # tovsolver-service
 
 ## References

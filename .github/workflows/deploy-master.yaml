@@ -12,7 +12,7 @@ on:
         - info
         - warning
         - debug
-      environment:
+      deploy_target:
         description: 'Environment to run tests against'
         type: environment
         required: true
@@ -42,6 +42,9 @@ jobs:
         python -VV
         python -m pip install --upgrade pip setuptools wheel
         python -m pip install -r requirements.txt
+
+    - name: Show Environment
+      run: echo 'Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}''
 
     - name: Serverless deploy
       uses: serverless/github-action@v1.53.0
