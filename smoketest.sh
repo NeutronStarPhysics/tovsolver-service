@@ -22,7 +22,13 @@ clear
 
 
 # proxy request
-echo "proxy request"
+echo "proxy request - eos_merge"
 uuid=$(dbus-uuidgen)
 payload='{ "name": "'"$uuid"'", "type": "eos_merge" }'
 curl -X POST -H "Content-Type: application/json" -d "$payload" http://localhost:5000/invoke
+
+echo "proxy request - eos_generator"
+uuid=$(dbus-uuidgen)
+payload='{ "name": "'"$uuid"'", "type": "eos_generator", "payload": { "type": "mit_bag_model", "rho_0": 100, "bag_constant": 5 } }'
+curl -X POST -H "Content-Type: application/json" -d "$payload" http://localhost:5000/invoke
+
