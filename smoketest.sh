@@ -2,6 +2,9 @@
 
 # sleep 5
 
+# get hello world
+curl http://localhost:5000/
+
 # get services
 curl http://localhost:5000/jobs
 

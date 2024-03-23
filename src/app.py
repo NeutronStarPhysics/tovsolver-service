@@ -1,37 +1,12 @@
 import json
 from flask import Flask, request, jsonify
+from proxy import proxy_blueprint
+from services.jobs import jobs_blueprint
 
 app = Flask(__name__)
 
-
-@app.route("/")
-def hello():
-    return "Hello Src-World!"
-
-jobs = [
-    {
-     "jobName": "job 1",
-    },
-    {
-     "jobName": "job 2", 
-    }
-]
-
-@app.route("/jobs", methods = ['GET'])
-def get_jobs():
-    return jsonify(jobs)
-
-@app.route("/jobs", methods = ['POST'])
-def add_job():
-    request_data = request.get_json()
-
-    job_name = request_data['jobName']
-
-    jobs.append({
-     "jobName": job_name, 
-    })
-    return '', 201
-
+app.register_blueprint(proxy_blueprint)
+app.register_blueprint(jobs_blueprint)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
