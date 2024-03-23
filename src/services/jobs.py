@@ -1,14 +1,21 @@
 from flask import Blueprint, request, jsonify
 
-
 jobs_blueprint = Blueprint('jobs', __name__,)
 
 jobs = [
     {
      "jobName": "job 1",
-    },
-    {
-     "jobName": "job 2", 
+     "job": {
+        "job_type": "eos_merge",
+        "input": {
+            "eos_points": [
+                    [123, 1],
+                    [123, 2],
+                    [123, 3],
+                    [123, 4],
+            ]
+        }
+     }
     }
 ]
 
