@@ -8,6 +8,9 @@ help:
 bootstrap: 
 	APP_FOLDER=./src ./bootstrap.sh
 
+unittest:
+	pytest -v
+	
 docker-build:
 	docker build -t service-configuration-api .
 

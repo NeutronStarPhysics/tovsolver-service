@@ -27,6 +27,7 @@ def parse_request(request) -> ProxyRequest:
 
 @proxy_blueprint.route("/invoke", methods = ['POST'])
 def invoke():
+    print("REQUEST:" + str(request.get_data()))
     proxy_request = parse_request(request)
 
     print("Calling '{}'".format(proxy_request.type))
