@@ -33,6 +33,6 @@ def invoke():
     print("Calling '{}'".format(proxy_request.type))
     task_manager = TaskManager(proxy_request.type, proxy_request.payload)
 
-    error = task_manager.invoke()
+    response = task_manager.invoke()
 
-    return '', 201
+    return response, 201

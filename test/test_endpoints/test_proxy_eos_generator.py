@@ -28,6 +28,10 @@ def client(app):
 def runner(app):
     return app.test_cli_runner()
 
+def response_as_json(response):
+    """Decode json from response"""
+    return json.loads(response.data.decode('utf8'))
+
 def post_json(client, url, json_dict):
     """Send dictionary json_dict as a json to the specified url """
     return client.post(url, data=json.dumps(json_dict), content_type='application/json')
@@ -47,4 +51,7 @@ def test_eos_generation_MIT(client):
 
 
     response = post_json(client, '/invoke', payload)
+
+    json_response = response_as_json(response)
     assert response.status_code == 201
+    assert json_response["payload"] == payload["payload"]

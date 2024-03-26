@@ -7,5 +7,12 @@ def run(payload):
     # eos_data = payload["payload"]
     # print("eos_data.type:" + str(payload["type"]))
 
-    return  0
+    return  {
+        "payload": payload,
+        "eos": [
+            [1, 1],
+            [2, 2],
+            [3, 3],
+        ]
+    }
 
